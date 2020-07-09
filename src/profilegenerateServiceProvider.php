@@ -1,6 +1,6 @@
 <?php
 
-namespace SPP24\profilegenerator;
+namespace spp24\profilegenerator;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +13,7 @@ class profilegeneratorServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->make('SPP24\profilegenerator\src\Http\Controllers\ProfileController');
+        $this->app->make('spp24\profilegenerator\src\Http\Controllers\ProfileController');
     }
 
     /**
@@ -26,12 +26,12 @@ class profilegeneratorServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
         $this->loadMigrationsFrom(__DIR__ . '/src/database/migrations');
         $this->loadFactoriesFrom(__DIR__.'/src/database/factories');
-        $this->loadViewsFrom(__DIR__.'/resources/views/profiles/', 'SPP24');
+        $this->loadViewsFrom(__DIR__.'/resources/views/profiles/', 'spp24');
         $this->publishes([
-            __DIR__.'/resources/views/profiles' => base_path('resources/views/vendor/SPP24/profiles'),
+            __DIR__.'/resources/views/profiles' => base_path('resources/views/vendor/spp24/profiles'),
         ]);
 
-        $this->app['router']->namespace('SPP24\\profilegenerator\\Controllers')
+        $this->app['router']->namespace('spp24\\profilegenerator\\Controllers')
             ->middleware(['auth'])
             ->group(function () {
                 $this->loadRoutesFrom(__DIR__ . '/routes/web.php');

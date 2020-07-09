@@ -1,7 +1,7 @@
 <?php
 
 //namespace App;
-namespace SPP24\profilegenerator\src\Models;
+namespace spp24\profilegenerator\src\Models;
 
 use App\User;
 use Illuminate\Support\Facades\DB;

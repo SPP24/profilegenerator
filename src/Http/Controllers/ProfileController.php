@@ -1,9 +1,9 @@
 <?php
 
-namespace SPP24\profilegenerator\src\Http\Controllers;
+namespace spp24\profilegenerator\src\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use SPP24\profilegenerator\src\Models\Profile;
+use spp24\profilegenerator\src\Models\Profile;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -18,7 +18,7 @@ class ProfileController extends Controller
     public function index()
     {
         $users = Profile::userList()->paginate(15); 
-        return view('SPP24::profiles.index', ['users'=>$users]);
+        return view('spp24::profiles.index', ['users'=>$users]);
     }
 
     /**
@@ -28,7 +28,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        return view('SPP24::profiles.create');
+        return view('spp24::profiles.create');
     }
 
     /**
@@ -71,7 +71,7 @@ class ProfileController extends Controller
      */
     public function show(Profile $profile)
     {
-        return view('SPP24::profiles.show', ['profile'=>$profile]);
+        return view('spp24::profiles.show', ['profile'=>$profile]);
     }
 
     /**
@@ -82,7 +82,7 @@ class ProfileController extends Controller
      */
     public function edit(Profile $profile)
     {
-        return view('SPP24::profiles.edit', compact('profile'));
+        return view('spp24::profiles.edit', compact('profile'));
     }
 
     /**
@@ -128,7 +128,7 @@ class ProfileController extends Controller
     public function createprofile($profile) {
         $profileId = Profile::createProfile($profile);
         if($profileId) {
-            return view('SPP24::profiles.edit', ['profile'=>$profileId]);
+            return view('spp24::profiles.edit', ['profile'=>$profileId]);
         } else {
             return redirect(route('profiles.index'));
         }        

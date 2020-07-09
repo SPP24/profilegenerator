@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use SPP24\profilegenerator\welcome;
-use SPP24\profilegenerator\src;
-use SPP24\profilegenerator\Greetr;
+use spp24\profilegenerator\welcome;
+use spp24\profilegenerator\src;
+use spp24\profilegenerator\Greetr;
 
 Route::get('/greet/{name}', function($sName) {
     $oGreetr = new Greetr();
@@ -11,7 +11,7 @@ Route::get('/greet/{name}', function($sName) {
 });
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::group(['namespace' => '\SPP24\profilegenerator\src\Http\Controllers'], function() {
+    Route::group(['namespace' => '\spp24\profilegenerator\src\Http\Controllers'], function() {
         Route::get('/profiles', 'ProfileController@index')->name('profiles.index');
         Route::post('/profiles', 'ProfileController@store')->name('profiles.store');
         Route::get('/profiles/create', 'ProfileController@create')->name('profiles.create');
