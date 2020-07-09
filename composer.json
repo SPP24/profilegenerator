@@ -1,5 +1,5 @@
 {
-    "name": "SPP24/profilegenerator",
+    "name": "spp24/profilegenerator",
     "description": "A package for generating user profiles in laravel",
     "type": "library",
     "authors": [
@@ -13,7 +13,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "SPP24\\profilegenerator\\": "packages/SPP24/profilegenerator/src/"
+            "spp24\\profilegenerator\\": "packages/spp24/profilegenerator/src/"
         }
     }
 }
